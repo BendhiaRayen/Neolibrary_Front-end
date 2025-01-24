@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .main-container {
+    @apply flex flex-col min-h-screen bg-cover bg-center bg-no-repeat text-gray-900;
+    background-image: url("./assets/NeoLibrary.png"); /* Replace with your actual image path */
+  }
+
+  .main-header {
+    @apply bg-green-500 text-white text-center py-8 px-4;
+  }
+
+  .main-header h1 {
+    @apply text-4xl font-bold;
+  }
+
+  .main-header p {
+    @apply text-lg mt-2;
+  }
+
+  .main-content {
+    @apply flex justify-around py-8 px-4 flex-grow;
+  }
+
+  .feature-button {
+    @apply bg-white p-6 rounded-lg shadow-md w-1/4 text-center cursor-pointer transition-transform transform hover:scale-105 text-green-500 font-bold;
+    border: 1px solid var(--border);
+    background-size: cover;
+    background-position: center;
+    /* Uncomment to use background images:
+       background-image: url("./assets/rayen5.png"); // Library
+       background-image: url("./assets/rayen6.png"); // Shared Space
+       background-image: url("./assets/rayen7.png"); // Authentication
+    */
+  }
+
+  .feature-button.library {
+    /* background-image: url("./assets/rayen5.png"); Replace with actual path */
+  }
+
+  .feature-button.shared-space {
+    /* background-image: url("./assets/rayen6.png"); Replace with actual path */
+  }
+
+  .feature-button.authentication {
+    /* background-image: url("./assets/rayen7.png"); Replace with actual path */
+  }
+
+  .feature-button h2 {
+    @apply text-green-500 font-bold;
+  }
+
+  .feature-button p {
+    @apply text-green-500 font-bold;
+  }
+
+  .main-footer {
+    @apply bg-green-500 text-white text-center py-4;
+    margin-top: auto;
+  }
+
+  .main-footer p {
+    @apply text-sm;
+  }
+}
+
+/* Navbar styles */
+.menubar {
+  background-color: white;
+  color: #4caf50;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menubar a {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menubar a:hover {
+  color: #2e7d32;
+}
+
+.menubar a.active {
+  color: #2e7d32;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 50px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50;
+  font-family: "Arial", sans-serif;
+}
+.form-container {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-container label {
+  font-weight: 500;
+  color: #4caf50;
+}
+
+.form-container input,
+.form-container textarea {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.form-container button {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #388e3c;
+}
