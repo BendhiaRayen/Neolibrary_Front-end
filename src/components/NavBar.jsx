@@ -1,42 +1,32 @@
-import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
+import "../index.css"; // Optional if you want additional styling
+
 export default function NavBar() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Remove the token from localStorage
+    localStorage.removeItem("token");
+
+    // Redirect to Home page
+    navigate("/");
+  };
+
   return (
-    <Menubar className="menubar">
-      <Logo />
-      <div className="logo-container">
-        <NavLink to="/" className="logo-text">
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <Logo />
+        <span className="logo-text" onClick={() => navigate("/dashboard")}>
           NeoLibrary
-        </NavLink>
+        </span>
       </div>
-      {/* Navigation Links */}
-      <div className="flex gap-4">
-        <MenubarMenu>
-          <MenubarTrigger>
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              Login
-            </NavLink>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger>
-            <NavLink
-              to="/register"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              Register
-            </NavLink>
-          </MenubarTrigger>
-        </MenubarMenu>
+      <div className="navbar-links">
+        {/* Logout Button */}
+        <button className="navbar-link logout" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
-    </Menubar>
+    </nav>
   );
 }

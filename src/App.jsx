@@ -10,20 +10,86 @@ import LibraryOfResources from "./pages/LibraryofResources";
 import ResourceList from "./components/ResourceList";
 import ResourceForm from "./components/ResourceForm";
 import ExploreCategories from "./pages/Category";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./pages/Home";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Main />} />
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/SharedSpace" element={<SharedSpace />} />
-        <Route path="/suggestion-list" element={<SuggestionList />} />
-        <Route path="/suggestion-form" element={<SuggestionForm />} />
-        <Route path="/LibraryofResources" element={<LibraryOfResources />} />
-        <Route path="/resource-list" element={<ResourceList />} />
-        <Route path="/resource-form" element={<ResourceForm />} />
-        <Route path="/ExploreCategories" element={<ExploreCategories />} />
+
+        {/* Protected Routes */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Main />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/SharedSpace"
+          element={
+            <ProtectedRoute>
+              <SharedSpace />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/LibraryofResources"
+          element={
+            <ProtectedRoute>
+              <LibraryOfResources />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ExploreCategories"
+          element={
+            <ProtectedRoute>
+              <ExploreCategories />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/suggestion-list"
+          element={
+            <ProtectedRoute>
+              <SuggestionList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/suggestion-form"
+          element={
+            <ProtectedRoute>
+              <SuggestionForm />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/resource-list"
+          element={
+            <ProtectedRoute>
+              <ResourceList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/resource-form"
+          element={
+            <ProtectedRoute>
+              <ResourceForm />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Routes>
     </Router>
   );

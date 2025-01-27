@@ -175,3 +175,535 @@
 .form-container button:hover {
   background-color: #388e3c;
 }
+/* Home Page Styles */
+.home-container {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #4caf50;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("https://via.placeholder.com/1920x1080") no-repeat center
+    center/cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  background: #4caf50;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #45a049;
+}
+
+.btn-alt {
+  background: transparent;
+  border: 2px solid #4caf50;
+  padding: 0.8rem 1.5rem;
+}
+
+.btn-alt:hover {
+  background: #4caf50;
+  color: white;
+}
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-link {
+  font-weight: bold;
+  font-size: 1rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.3s, background 0.3s;
+}
+
+.navbar-link.logout {
+  background: #e74c3c;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.navbar-link.logout:hover {
+  background: #c0392b;
+}
+/* General container styling */
+.suggestion-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+.suggestion-form h2 {
+  color: #4caf50;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Form Styling */
+.suggestion-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels */
+.suggestion-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input Fields */
+.suggestion-form input,
+.suggestion-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+/* Textarea */
+.suggestion-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Button */
+.suggestion-form button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-form button:hover {
+  background-color: #45a049;
+}
+
+/* Success & Error Messages */
+.success-text {
+  color: #28a745;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* Suggestion List Styling */
+.suggestion-list h2 {
+  color: #4caf50;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.suggestion-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.suggestion-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-list h3 {
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+.suggestion-list p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+/* Styles for the Category Form */
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.category-form {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.category-form h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #4caf50; /* Green color for the heading */
+  text-align: center;
+}
+
+.category-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+.category-form input {
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.category-form input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3); /* Green focus ring */
+}
+
+.category-form button {
+  background-color: #4caf50;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-form button:hover {
+  background-color: #43a047; /* Slightly darker green on hover */
+}
+
+.category-form .error-text {
+  color: #d32f2f; /* Red for error messages */
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.category-form .success-text {
+  color: #388e3c; /* Green for success messages */
+  font-size: 0.875rem;
+  text-align: center;
+}
+/* Resource List Container */
+.resource-list-container {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* Resource List Heading */
+.resource-list-container h2 {
+  color: #4caf50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Loading and Error Text */
+.resource-list-container p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Error Message */
+.resource-list-container .error-text {
+  color: #d32f2f; /* Red for error messages */
+  font-weight: bold;
+}
+
+/* Resource List */
+.resource-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Resource Item */
+.resource-item {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Resource Title */
+.resource-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Resource Description */
+.resource-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Resource Metadata */
+.resource-item span {
+  display: block;
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+/* Resource Link */
+.resource-item a {
+  color: #1e88e5;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.resource-item a:hover {
+  color: #1565c0;
+}
+/* General Styles for the Pages */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-description {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: #45a049;
+}
+
+.auth-error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-success {
+  color: #4caf50;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-footer {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.auth-footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

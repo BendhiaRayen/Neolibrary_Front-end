@@ -10,17 +10,42 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function Login({ className, ...props }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // For displaying error messages
+  const navigate = useNavigate(); // React Router's navigation hook
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Login submitted!");
+    try {
+      // Send login request to backend
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      // Save the token in localStorage
+      localStorage.setItem("token", data.token);
+
+      // Redirect to the dashboard or home page
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.message); // Display the error message
+    }
   };
 
   return (
@@ -51,12 +76,13 @@ export default function Login({ className, ...props }) {
                   <div className="grid gap-2">
                     <div className="flex items-center">
                       <Label htmlFor="password">Password</Label>
-                      <a
-                        href="#"
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                      {/* Update the 'Forgot Password' link */}
+                      <Link
+                        to="/forgot-password"
+                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline text-blue-500"
                       >
                         Forgot your password?
-                      </a>
+                      </Link>
                     </div>
                     <Input
                       id="password"
@@ -66,6 +92,10 @@ export default function Login({ className, ...props }) {
                       required
                     />
                   </div>
+                  {error && (
+                    <p className="text-red-500 text-sm">{error}</p> // Display error message
+                  )}
+
                   <Button type="submit" className="w-full">
                     Login
                   </Button>
@@ -74,7 +104,7 @@ export default function Login({ className, ...props }) {
                   Don&apos;t have an account?{" "}
                   <Link
                     to={"/register"}
-                    className="underline underline-offset-4"
+                    className="underline underline-offset-4 text-blue-500"
                   >
                     Sign up
                   </Link>
